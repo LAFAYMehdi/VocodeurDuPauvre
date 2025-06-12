@@ -1,0 +1,202 @@
+lafaymehdi@MacBook-Air Pauvocoder % javac Pauvocoder.java
+
+lafaymehdi@MacBook-Air Pauvocoder % 
+lafaymehdi@MacBook-Air Pauvocoder % java Pauvocoder      
+usage: pauvocoder <input.wav> <freqScale>
+
+lafaymehdi@MacBook-Air Pauvocoder % java Pauvocoder linformatique.wav 0.2
+
+Signal final affiché
+2024-12-22 11:33:40.394 java[2021:17891] +[IMKClient subclass]: chose IMKClient_Modern
+2024-12-22 11:33:40.394 java[2021:17891] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+lafaymehdi@MacBook-Air Pauvocoder % java Pauvocoder linformatique.wav 0.7
+
+Signal final affiché
+2024-12-22 11:34:12.427 java[2067:18830] +[IMKClient subclass]: chose IMKClient_Modern
+2024-12-22 11:34:12.427 java[2067:18830] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+lafaymehdi@MacBook-Air Pauvocoder % javac 
+Main.class                                 StdAudio.java                              linformatique_0.7_SimpleOver.wav
+Main.java                                  StdDraw\$RetinaImageIcon.class             linformatique_0.7_SimpleOverCrossEcho.wav
+Pauvocoder.class                           StdDraw.class                              linformatique_1.3_Resampled.wav
+Pauvocoder.java                            StdDraw.java                               linformatique_1.3_Simple.wav
+PauvocoderInterface\$1.class               linformatique.wav*                         linformatique_1.3_SimpleOver.wav
+PauvocoderInterface.class                  linformatique_0.2_Resampled.wav            linformatique_1.3_SimpleOverCrossEcho.wav
+PauvocoderInterface.java                   linformatique_0.2_Simple.wav               linformatique_1.5_Resampled.wav
+StdAudio\$1.class                          linformatique_0.2_SimpleOver.wav           linformatique_1.5_Simple.wav
+StdAudio\$BackgroundRunnable.class         linformatique_0.2_SimpleOverCrossEcho.wav  linformatique_1.5_SimpleOver.wav
+StdAudio\$QueueOfDoubles.class             linformatique_0.7_Resampled.wav            linformatique_1.5_SimpleOverCrossEcho.wav
+StdAudio.class                             linformatique_0.7_Simple.wav               
+lafaymehdi@MacBook-Air Pauvocoder % javac PauvocoderInterface.java
+PauvocoderInterface.java:84: error: no suitable method found for echo(double[],double)
+            outputWav = Pauvocoder.echo(newPitchWav, 1.0 / freqScale);
+                                  ^
+    method Pauvocoder.echo(double[],double,double,int) is not applicable
+      (actual and formal argument lists differ in length)
+    method Pauvocoder.echo(double[],double,double) is not applicable
+      (actual and formal argument lists differ in length)
+1 error
+lafaymehdi@MacBook-Air Pauvocoder % javac PauvocoderInterface.java
+PauvocoderInterface.java:84: error: illegal start of expression
+            outputWav = Pauvocoder.echo(newPitchWav, 1.0 / freqScale, /* third parameter here */);
+                                                                                                ^
+1 error
+lafaymehdi@MacBook-Air Pauvocoder % javac PauvocoderInterface.java
+lafaymehdi@MacBook-Air Pauvocoder % java PauvocoderInterface     
+2024-12-22 11:40:53.862 java[2390:25716] +[IMKClient subclass]: chose IMKClient_Modern
+2024-12-22 11:40:53.862 java[2390:25716] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException: Cannot read the array length because "PauvocoderInterface.outputWav" is null
+        at PauvocoderInterface$1.actionPerformed(PauvocoderInterface.java:110)
+        at java.desktop/javax.swing.Timer.fireActionPerformed(Timer.java:311)
+        at java.desktop/javax.swing.Timer$DoPostEvent.run(Timer.java:243)
+        at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318)
+        at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773)
+        at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
+        at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
+        at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+        at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+        at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+        at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+        at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+        at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+        at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+        at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+        at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+Exception in thread "AWT-EventQueue-0" java.lang.IllegalArgumentException: file of unsupported audio file format: '/Users/lafaymehdi/Downloads/FM24.3 Norway Fixtures and results.fmf 3'
+        at StdAudio.getAudioInputStreamFromFile(StdAudio.java:311)
+        at StdAudio.read(StdAudio.java:443)
+        at PauvocoderInterface.selectFile(PauvocoderInterface.java:138)
+        at PauvocoderInterface.lambda$setupGUI$0(PauvocoderInterface.java:43)
+        at java.desktop/javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1972)
+        at java.desktop/javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2314)
+        at java.desktop/javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:407)
+        at java.desktop/javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:262)
+        at java.desktop/javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:279)
+        at java.desktop/java.awt.Component.processMouseEvent(Component.java:6621)
+        at java.desktop/javax.swing.JComponent.processMouseEvent(JComponent.java:3404)
+        at java.desktop/java.awt.Component.processEvent(Component.java:6386)
+        at java.desktop/java.awt.Container.processEvent(Container.java:2266)
+        at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:4996)
+        at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2324)
+        at java.desktop/java.awt.Component.dispatchEvent(Component.java:4828)
+        at java.desktop/java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4948)
+        at java.desktop/java.awt.LightweightDispatcher.processMouseEvent(Container.java:4575)
+        at java.desktop/java.awt.LightweightDispatcher.dispatchEvent(Container.java:4516)
+        at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2310)
+        at java.desktop/java.awt.Window.dispatchEventImpl(Window.java:2780)
+        at java.desktop/java.awt.Component.dispatchEvent(Component.java:4828)
+        at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:775)
+        at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
+        at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
+        at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+        at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+        at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:98)
+        at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:747)
+        at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:745)
+        at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+        at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+        at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:744)
+        at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+        at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+        at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+        at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+        at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+        at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+Caused by: javax.sound.sampled.UnsupportedAudioFileException: File of unsupported format
+        at java.desktop/javax.sound.sampled.AudioSystem.getAudioInputStream(AudioSystem.java:1064)
+        at StdAudio.getAudioInputStreamFromFile(StdAudio.java:284)
+        ... 38 more
+^C%                                                                                                                                                                     lafaymehdi@MacBook-Air Pauvocoder % javac PauvocoderInterface.java
+lafaymehdi@MacBook-Air Pauvocoder % java PauvocoderInterface      
+2024-12-22 11:45:12.922 java[2415:28249] +[IMKClient subclass]: chose IMKClient_Modern
+2024-12-22 11:45:12.922 java[2415:28249] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException: Cannot read the array length because "PauvocoderInterface.outputWav" is null
+        at PauvocoderInterface$1.actionPerformed(PauvocoderInterface.java:110)
+        at java.desktop/javax.swing.Timer.fireActionPerformed(Timer.java:311)
+        at java.desktop/javax.swing.Timer$DoPostEvent.run(Timer.java:243)
+        at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318)
+        at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773)
+        at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
+        at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
+        at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+        at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+        at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+        at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+        at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+        at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+        at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+        at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+        at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+^C%                                                                                                                                                                     lafaymehdi@MacBook-Air Pauvocoder % javac PauvocoderInterface.java
+lafaymehdi@MacBook-Air Pauvocoder % java PauvocoderInterface      
+2024-12-22 12:02:37.188 java[2561:41501] +[IMKClient subclass]: chose IMKClient_Modern
+2024-12-22 12:02:37.188 java[2561:41501] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+^C%                                                                                                                                                                     lafaymehdi@MacBook-Air Pauvocoder % javac PauvocoderInterface.java
+PauvocoderInterface.java:113: error: cannot find symbol
+        controlPanel.add(playButton);
+        ^
+  symbol:   variable controlPanel
+  location: class PauvocoderInterface
+PauvocoderInterface.java:117: error: cannot find symbol
+        controlPanel.add(playButton);
+        ^
+  symbol:   variable controlPanel
+  location: class PauvocoderInterface
+PauvocoderInterface.java:118: error: cannot find symbol
+        controlPanel.add(resetButton);
+        ^
+  symbol:   variable controlPanel
+  location: class PauvocoderInterface
+PauvocoderInterface.java:119: error: cannot find symbol
+        mainPanel.add(controlPanel);
+                      ^
+  symbol:   variable controlPanel
+  location: class PauvocoderInterface
+4 errors
+lafaymehdi@MacBook-Air Pauvocoder % 
+lafaymehdi@MacBook-Air Pauvocoder % javac PauvocoderInterface.java
+lafaymehdi@MacBook-Air Pauvocoder % java PauvocoderInterface      
+2024-12-22 12:06:45.930 java[2616:44848] +[IMKClient subclass]: chose IMKClient_Modern
+2024-12-22 12:06:45.930 java[2616:44848] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+^C%                                                                                                                                                                     lafaymehdi@MacBook-Air Pauvocoder % javac PauvocoderInterface.java
+lafaymehdi@MacBook-Air Pauvocoder % java PauvocoderInterface      
+2024-12-22 12:09:06.932 java[2640:46457] +[IMKClient subclass]: chose IMKClient_Modern
+2024-12-22 12:09:06.932 java[2640:46457] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+^C%                                                                                                                                                                     lafaymehdi@MacBook-Air Pauvocoder % javac PauvocoderInterface.java
+lafaymehdi@MacBook-Air Pauvocoder % java PauvocoderInterface      
+2024-12-22 12:12:02.213 java[2672:48292] +[IMKClient subclass]: chose IMKClient_Modern
+2024-12-22 12:12:02.213 java[2672:48292] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+^C%                                                                                                                                                                     lafaymehdi@MacBook-Air Pauvocoder % javac PauvocoderInterface.java
+lafaymehdi@MacBook-Air Pauvocoder % java PauvocoderInterface      
+2024-12-22 12:17:48.086 java[2717:51805] +[IMKClient subclass]: chose IMKClient_Modern
+2024-12-22 12:17:48.086 java[2717:51805] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+^C%                                                                                                                                                                     lafaymehdi@MacBook-Air Pauvocoder % javac PauvocoderInterface.java
+lafaymehdi@MacBook-Air Pauvocoder % java PauvocoderInterface      
+2024-12-22 12:22:34.275 java[2748:54734] +[IMKClient subclass]: chose IMKClient_Modern
+2024-12-22 12:22:34.275 java[2748:54734] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+^C%                                                                                                                                                                     lafaymehdi@MacBook-Air Pauvocoder % javac PauvocoderInterface.java
+lafaymehdi@MacBook-Air Pauvocoder % java PauvocoderInterface      
+2024-12-22 12:28:44.251 java[2787:58486] +[IMKClient subclass]: chose IMKClient_Modern
+2024-12-22 12:28:44.252 java[2787:58486] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+^C%                                                                                                                                                                     lafaymehdi@MacBook-Air Pauvocoder % javac PauvocoderInterface.java
+lafaymehdi@MacBook-Air Pauvocoder % java PauvocoderInterface      
+2024-12-22 12:32:36.301 java[2842:62142] +[IMKClient subclass]: chose IMKClient_Modern
+2024-12-22 12:32:36.302 java[2842:62142] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+^C%                                                                                                                                                                     lafaymehdi@MacBook-Air Pauvocoder % javac PauvocoderInterface.java
+lafaymehdi@MacBook-Air Pauvocoder % java PauvocoderInterface      
+2024-12-22 12:33:24.229 java[2858:62907] +[IMKClient subclass]: chose IMKClient_Modern
+2024-12-22 12:33:24.229 java[2858:62907] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+lafaymehdi@MacBook-Air Pauvocoder % javac PauvocoderInterface.java
+lafaymehdi@MacBook-Air Pauvocoder % java PauvocoderInterface      
+2024-12-22 12:34:15.157 java[2868:63692] +[IMKClient subclass]: chose IMKClient_Modern
+2024-12-22 12:34:15.157 java[2868:63692] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+^C%                                                                                                                                                                     lafaymehdi@MacBook-Air Pauvocoder % javac PauvocoderInterface.java
+lafaymehdi@MacBook-Air Pauvocoder % java PauvocoderInterface      
+2024-12-22 13:15:57.756 java[3486:88474] +[IMKClient subclass]: chose IMKClient_Modern
+2024-12-22 13:15:57.756 java[3486:88474] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+Exception in thread "Thread-2" java.lang.ArrayIndexOutOfBoundsException: Index 2730 out of bounds for length 2730
+        at StdAudio.play(StdAudio.java:359)
+        at StdAudio.play(StdAudio.java:380)
+        at PauvocoderInterface.lambda$setupGUI$10(PauvocoderInterface.java:144)
+        at java.base/java.lang.Thread.run(Thread.java:1575)
+
+

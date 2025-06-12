@@ -1,0 +1,57 @@
+# Compiled Java classes
+*.class
+
+# Package Files
+*.jar
+*.war
+*.ear
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+
+# Eclipse
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+# NetBeans
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Log files
+*.log
+
+# Virtual machine crash logs
+hs_err_pid*
+
+# Audio cache files (keep original samples but ignore processed duplicates)
+# *_Resampled.wav
+# *_Simple.wav
+# *_SimpleOver.wav
+# *_SimpleOverCrossEcho.wav 
